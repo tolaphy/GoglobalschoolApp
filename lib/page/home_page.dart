@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:goglobalschoolapp/page/Schedule.dart';
 import 'package:goglobalschoolapp/page/Score.dart';
 import 'package:goglobalschoolapp/page/attendance_page.dart';
+import 'package:goglobalschoolapp/page/class_report.dart';
 import 'package:goglobalschoolapp/page/event.dart';
 import 'package:goglobalschoolapp/page/profile_page.dart';
 import 'package:goglobalschoolapp/page/report.dart';
@@ -11,18 +12,22 @@ import 'package:goglobalschoolapp/widgets/appbar.dart';
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
-  Card _MenuCard(String title, String imgpath, Color boxcolor) {
-    return Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          Image.asset(
-            'images/${imgpath}',
-            height: 80,
-            color: boxcolor,
-          ),
-        ],
+  Container _MenuCard(String imgpath, Color boxcolor) {
+    return Container(
+      child: Card(
+        elevation: 5,
+        margin: const EdgeInsets.all(10),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            Image.asset(
+              'images/${imgpath}',
+              height: 70,
+              color: boxcolor,
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -38,10 +43,14 @@ class HomePage extends StatelessWidget {
       body: Stack(children: <Widget>[
         const SizedBox(
           width: double.infinity,
-          height: 200,
+          height: 230,
           child: DecoratedBox(
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: Colors.black,
+              image: DecorationImage(
+                image: AssetImage('images/bgprofile.jpg'),
+                fit: BoxFit.cover,
+              ),
             ),
           ),
         ),
@@ -51,8 +60,10 @@ class HomePage extends StatelessWidget {
               //Center(
               GestureDetector(
                 onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => ProfilePage()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ProfilePage()));
                 },
                 child: Container(
                   margin: const EdgeInsets.only(top: 50),
@@ -97,72 +108,95 @@ class HomePage extends StatelessWidget {
               ),
 
               const SizedBox(
-                height: 50,
+                height: 130,
+
                 //width: 100,
               ),
-              Expanded(
+              Container(
+                width: MediaQuery.of(context).size.width,
+                height: 420,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    fit: BoxFit.fill,
+                    colorFilter: ColorFilter.mode(
+                        Colors.white.withOpacity(0.2), BlendMode.dstATop),
+                    image: const AssetImage(
+                      'images/logo1.png',
+                    ),
+                  ),
+                ),
+                child: Expanded(
                   child: GridView.count(
-                crossAxisCount: 3,
-                //crossAxisSpacing: 5.0,
-                mainAxisSpacing: 40,
-                children: <Widget>[
-                  GestureDetector(
-                      onTap: () => {
+                    crossAxisCount: 3,
+                    //crossAxisSpacing: 5.0,
+                    mainAxisSpacing: 50,
+
+                    children: <Widget>[
+                      GestureDetector(
+                        onTap: () => {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const AttendancePage())),
+                        },
+                        child: _MenuCard(
+                          'attendance.png',
+                          const Color(0xff12663b),
+                        ),
+                      ),
+                      GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ScorePage()));
+                          },
+                          child:
+                              _MenuCard('score.png', const Color(0xffec2777))),
+                      GestureDetector(
+                          onTap: () {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) =>
-                                        const AttendancePage())),
+                                        const SchedulePage()));
                           },
-                      child: _MenuCard('Attendance', 'attendance.png',
-                          const Color(0xff12663b))),
-                  GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => ScorePage()));
-                      },
-                      child: _MenuCard(
-                          'Score', 'score.png', const Color(0xffec2777))),
-                  GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const SchedulePage()));
-                      },
-                      child: _MenuCard(
-                          'Schedule', 'schedule.png', const Color(0xffedbd1d))),
-                  GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const SchoolFeePage()));
-                      },
-                      child: _MenuCard('School Fees', 'schoolfee.png',
-                          const Color(0xffa7499a))),
-                  GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const EventPage()));
-                      },
-                      child: _MenuCard(
-                          'Event', 'event.png', const Color(0xff653413))),
-                  GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const ReportPage()));
-                      },
-                      child: _MenuCard(
-                          'Report', 'report.png', const Color(0xffdb2127))),
-                ],
-              ))
+                          child: _MenuCard(
+                              'schedule.png', const Color(0xffedbd1d))),
+                      GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const SchoolFeePage()));
+                          },
+                          child: _MenuCard(
+                              'schoolfee.png', const Color(0xffa7499a))),
+                      GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const EventPage()));
+                          },
+                          child:
+                              _MenuCard('event.png', const Color(0xff653413))),
+                      GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const Class_report()));
+                          },
+                          child:
+                              _MenuCard('report.png', const Color(0xffdb2127))),
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         )

@@ -90,6 +90,28 @@ flutter:
    - images/1.jpeg
    - images/2.jpeg
    - images/3.jpeg
+   - images/bgprofile.jpg
+   - images/logo.jpeg
+   - images/logo1.png
+   - images/who_we_are.png
+   - images/RAIH.png
+   - images/AHC.jpeg
+   - images/CUB.png
+   - images/IBC.jpeg
+   - images/LL.png
+   - images/gr.png
+   - images/AIM.png
+   - images/makro.png
+   - images/PAB.jpeg
+   - images/UK.png
+   - images/PVBS.jpeg
+   - images/PDH.jpeg
+   - images/lock.png
+   - images/E.png
+   - images/ps.jpeg
+   - images/gh.jpeg
+   - images/fd.jpeg
+   - images/logo2.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

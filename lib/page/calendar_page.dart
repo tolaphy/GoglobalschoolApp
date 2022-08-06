@@ -142,9 +142,7 @@ class CalendarPage extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 20),
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height,
-                  decoration: const BoxDecoration(
-                    color: Color(0xff30384c),
-                  ),
+                  decoration: const BoxDecoration(color: Colors.white),
                   child: Stack(
                     children: <Widget>[
                       Column(

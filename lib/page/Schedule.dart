@@ -30,7 +30,7 @@ class SchedulePageState extends State<SchedulePage>
         body: Column(children: [
           const SizedBox(
             width: double.infinity,
-            height: 200,
+            height: 230,
             child: Profile(),
           ),
           Container(

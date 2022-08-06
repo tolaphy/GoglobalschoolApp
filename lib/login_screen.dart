@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:goglobalschoolapp/home_screen.dart';
 import 'package:goglobalschoolapp/main.dart';
+import 'package:goglobalschoolapp/page/forget_pass.dart';
 
 import 'package:graphql_flutter/graphql_flutter.dart';
 
@@ -64,7 +65,7 @@ class InitState extends State<LoginScreen> {
               children: [
                 Container(
                   margin: const EdgeInsets.only(top: 100),
-                  child: Image.asset("images/logo.png"),
+                  child: Image.asset("images/logo_app.png"),
                 )
               ],
             )),
@@ -86,82 +87,15 @@ class InitState extends State<LoginScreen> {
               QueryResult? result,
             ) {
               return Center(
-                child: Column(children: <Widget>[
-                  Container(
-                    margin: const EdgeInsets.only(left: 20, right: 20, top: 70),
-                    padding: const EdgeInsets.only(left: 20, right: 20),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50),
-                      color: Colors.grey[200],
-                      boxShadow: const [
-                        BoxShadow(
-                          offset: Offset(0, 10),
-                          blurRadius: 50,
-                          color: Color(0xffEEEEEE),
-                        )
-                      ],
-                    ),
-                    alignment: Alignment.center,
-                    child: TextField(
-                        controller: emailController,
-                        cursorColor: const Color(0x00000001),
-                        decoration: const InputDecoration(
-                            icon: Icon(
-                              Icons.person,
-                              color: Color(0xff000000),
-                            ),
-                            hintText: "Email",
-                            enabledBorder: InputBorder.none,
-                            focusedBorder: InputBorder.none,
-                            hintStyle: TextStyle(fontFamily: 'CenturyGothic'))),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.only(left: 20, right: 20, top: 20),
-                    padding: const EdgeInsets.only(left: 20, right: 20),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50),
-                      color: Colors.grey[200],
-                      boxShadow: const [
-                        BoxShadow(
-                          offset: Offset(0, 10),
-                          blurRadius: 50,
-                          color: Color(0xffEEEEEE),
-                        )
-                      ],
-                    ),
-                    alignment: Alignment.center,
-                    child: TextField(
-                        controller: passController,
-                        obscureText: true,
-                        cursorColor: const Color(0x00000001),
-                        decoration: const InputDecoration(
-                            icon: Icon(
-                              Icons.key,
-                              color: Color(0xff000000),
-                            ),
-                            hintText: "Password",
-                            enabledBorder: InputBorder.none,
-                            focusedBorder: InputBorder.none,
-                            hintStyle: TextStyle(fontFamily: 'CenturyGothic'))),
-                  ),
-                  GestureDetector(
-                    onTap: (() => Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const HomeScreen()))),
-                    child: Container(
+                child: Column(
+                  children: <Widget>[
+                    Container(
                       margin:
-                          const EdgeInsets.only(left: 20, right: 20, top: 20),
+                          const EdgeInsets.only(left: 20, right: 20, top: 70),
                       padding: const EdgeInsets.only(left: 20, right: 20),
-                      alignment: Alignment.center,
-                      height: 54,
                       decoration: BoxDecoration(
-                        gradient: const LinearGradient(
-                          colors: [(Color(0xFF1565C0)), (Color(0xFF1565C0))],
-                          begin: Alignment.centerLeft,
-                          end: Alignment.centerLeft,
-                        ),
                         borderRadius: BorderRadius.circular(50),
+                        color: Colors.grey[200],
                         boxShadow: const [
                           BoxShadow(
                             offset: Offset(0, 10),
@@ -170,14 +104,105 @@ class InitState extends State<LoginScreen> {
                           )
                         ],
                       ),
-                      child: const Text(
-                        "LOGIN",
-                        style: TextStyle(
-                            color: Colors.white, fontFamily: 'CenturyGothic'),
+                      alignment: Alignment.center,
+                      child: TextField(
+                          controller: emailController,
+                          cursorColor: const Color(0x00000001),
+                          decoration: const InputDecoration(
+                              icon: Icon(
+                                Icons.email,
+                                color: Color(0xff0b82c3),
+                              ),
+                              hintText: "Email",
+                              enabledBorder: InputBorder.none,
+                              focusedBorder: InputBorder.none,
+                              hintStyle:
+                                  TextStyle(fontFamily: 'CenturyGothic'))),
+                    ),
+                    Container(
+                      margin:
+                          const EdgeInsets.only(left: 20, right: 20, top: 20),
+                      padding: const EdgeInsets.only(left: 20, right: 20),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50),
+                        color: Colors.grey[200],
+                        boxShadow: const [
+                          BoxShadow(
+                            offset: Offset(0, 10),
+                            blurRadius: 50,
+                            color: Color(0xffEEEEEE),
+                          )
+                        ],
+                      ),
+                      alignment: Alignment.center,
+                      child: TextField(
+                          controller: passController,
+                          obscureText: true,
+                          cursorColor: const Color(0x00000001),
+                          decoration: const InputDecoration(
+                              icon: Icon(
+                                Icons.key,
+                                color: Color(0xFF1565C0),
+                              ),
+                              hintText: "Password",
+                              enabledBorder: InputBorder.none,
+                              focusedBorder: InputBorder.none,
+                              hintStyle:
+                                  TextStyle(fontFamily: 'CenturyGothic'))),
+                    ),
+                    GestureDetector(
+                      onTap: (() => Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const HomeScreen()))),
+                      child: Container(
+                        margin:
+                            const EdgeInsets.only(left: 20, right: 20, top: 20),
+                        padding: const EdgeInsets.only(left: 20, right: 20),
+                        alignment: Alignment.center,
+                        height: 54,
+                        decoration: BoxDecoration(
+                          gradient: const LinearGradient(
+                            colors: [(Color(0xff0b82c3)), (Color(0xff0b82c3))],
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerLeft,
+                          ),
+                          borderRadius: BorderRadius.circular(50),
+                          boxShadow: const [
+                            BoxShadow(
+                              offset: Offset(0, 10),
+                              blurRadius: 50,
+                              color: Color(0xffEEEEEE),
+                            )
+                          ],
+                        ),
+                        child: const Text(
+                          "LOGIN",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: 'CenturyGothic',
+                          ),
+                        ),
                       ),
                     ),
-                  )
-                ]),
+                    Container(
+                      margin: const EdgeInsets.only(top: 10, left: 220),
+                      child: GestureDetector(
+                        onTap: (() => Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const ForgetPass()))),
+                        child: const Text(
+                          'Forget password?',
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontFamily: 'CenturyGothic',
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               );
             },
           ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:goglobalschoolapp/page/event_detial.dart';
 
 import 'package:goglobalschoolapp/widgets/appbar.dart';
 import 'package:goglobalschoolapp/widgets/profile.dart';
@@ -93,7 +94,7 @@ class EventPageState extends State<EventPage> {
         children: [
           const SizedBox(
             width: double.infinity,
-            height: 200,
+            height: 230,
             child: Profile(),
           ),
           const SizedBox(
@@ -102,17 +103,59 @@ class EventPageState extends State<EventPage> {
           Expanded(
             flex: 10,
             child: GridView.count(
-                crossAxisCount: 2,
-                //mainAxisSpacing: 5,
-                children: List.generate(4, (index) {
-                  return tasklists(
-                      index % 2 == 0
-                          ? const Color(0xffa7499a)
-                          : const Color(0xffec2777),
-                      index % 2 == 0 ? '1.jpeg' : '3.jpeg',
-                      'School is going for vacation in next month. ',
-                      '02 March 2022');
-                })),
+              crossAxisCount: 2,
+              //mainAxisSpacing: 5,
+              children: <Widget>[
+                GestureDetector(
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const EventDetail())),
+                  child: tasklists(
+                    const Color(0xffec2777),
+                    '1.jpeg',
+                    'School is going for vacation in next month',
+                    '02 may 2022',
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const EventDetail())),
+                  child: tasklists(
+                    const Color(0xffa7499a),
+                    '2.jpeg',
+                    'School is going for vacation in next month',
+                    '02 may 2022',
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const EventDetail())),
+                  child: tasklists(
+                    const Color(0xffedbd1d),
+                    '3.jpeg',
+                    'School is going for vacation in next month',
+                    '02 may 2022',
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const EventDetail())),
+                  child: tasklists(
+                    const Color(0xff12663b),
+                    '1.jpeg',
+                    'School is going for vacation in next month',
+                    '02 may 2022',
+                  ),
+                ),
+              ],
+            ),
           )
         ],
       ),

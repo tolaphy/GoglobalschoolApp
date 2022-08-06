@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:goglobalschoolapp/page/Attendance_Detail.dart';
 import 'package:goglobalschoolapp/widgets/appbar.dart';
 import 'package:goglobalschoolapp/widgets/profile.dart';
 
@@ -43,153 +44,74 @@ class AttendancePageState extends State<AttendancePage> {
     String value3,
   ) {
     return Container(
-      margin: const EdgeInsets.only(left: 10, top: 10),
-      child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
+      margin: const EdgeInsets.only(left: 5, top: 10),
+      child: Card(
+        elevation: 5,
+        child: Row(
+          // crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Container(
-                height: 70,
-                width: 65,
-                margin: const EdgeInsets.only(left: 10),
-                padding: const EdgeInsets.all(5),
+                height: 75,
+                width: 413,
+                margin: const EdgeInsets.only(top: 10),
+
+                // padding: const EdgeInsets.all(5),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: const Color(0xffec2777),
+                  borderRadius: BorderRadius.circular(0),
+                  border: Border.all(
+                    color: Colors.white,
+                  ),
+                  color: Colors.white,
                 ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                child: Row(
+                  //mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+
                   children: <Widget>[
+                    Container(
+                      child: Text(
+                        month,
+                        style: const TextStyle(
+                          fontFamily: 'CenturyGothic',
+                          color: Color(0xff12663b),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                        ),
+                      ),
+                    ),
                     Text(
-                      month,
+                      value1,
                       style: const TextStyle(
                         fontFamily: 'CenturyGothic',
-                        color: Colors.white,
+                        color: Color(0xffec2777),
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                      ),
+                    ),
+                    Text(
+                      value2,
+                      style: const TextStyle(
+                        fontFamily: 'CenturyGothic',
+                        color: Color(0xffedbd1d),
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                      ),
+                    ),
+                    Text(
+                      value3,
+                      style: const TextStyle(
+                        fontFamily: 'CenturyGothic',
+                        color: Color(0xffdb2127),
                         fontWeight: FontWeight.bold,
                         fontSize: 20,
                       ),
                     ),
                   ],
                 )),
-            Container(
-                height: 70,
-                width: 100,
-                padding: const EdgeInsets.all(10),
-                margin: const EdgeInsets.only(left: 10),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: const Color(0xff12663b),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Center(
-                      child: Text(
-                        value1,
-                        style: const TextStyle(
-                          fontFamily: 'CenturyGothic',
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                    const Center(
-                      child: Text(
-                        'Present',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontFamily: 'CenturyGothic',
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                  ],
-                )),
-            Container(
-                height: 70,
-                width: 100,
-                padding: const EdgeInsets.all(10),
-                margin: const EdgeInsets.only(left: 10),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: const Color(0xffdb2127),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Center(
-                      child: Text(
-                        value2,
-                        style: const TextStyle(
-                          fontFamily: 'CenturyGothic',
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                    const Center(
-                      child: Text(
-                        'Absent',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontFamily: 'CenturyGothic',
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                  ],
-                )),
-            Container(
-                height: 70,
-                width: 100,
-                padding: const EdgeInsets.all(10),
-                margin: const EdgeInsets.only(left: 10),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: const Color(0xffedbd1d),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Center(
-                      child: Text(
-                        value3,
-                        style: const TextStyle(
-                          fontFamily: 'CenturyGothic',
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                    const Center(
-                      child: Text(
-                        'Permission',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontFamily: 'CenturyGothic',
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                  ],
-                )),
-          ]),
+          ],
+        ),
+      ),
     );
   }
 
@@ -206,7 +128,7 @@ class AttendancePageState extends State<AttendancePage> {
         children: [
           const SizedBox(
             width: double.infinity,
-            height: 200,
+            height: 230,
             child: Profile(),
           ),
           Container(
@@ -233,16 +155,80 @@ class AttendancePageState extends State<AttendancePage> {
                 },
                 items: dropdownItems),
           ),
+
+          Container(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Container(
+                  // margin: const EdgeInsets.only(left: 5),
+                  child: const Text(
+                    'MONTH',
+                    style: TextStyle(
+                      color: Color(0xff0b82c3),
+                      fontSize: 20,
+                    ),
+                  ),
+                ),
+                Container(
+                  child: const Text(
+                    'PRESENT',
+                    style: TextStyle(
+                      color: Color(0xff0b82c3),
+                      fontSize: 20,
+                    ),
+                  ),
+                ),
+                Container(
+                  child: const Text(
+                    'ABSENT',
+                    style: TextStyle(
+                      color: Color(0xff0b82c3),
+                      fontSize: 20,
+                    ),
+                  ),
+                ),
+                Container(
+                  child: const Text(
+                    'PERMISSION',
+                    style: TextStyle(
+                      color: Color(0xff0b82c3),
+                      fontSize: 20,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
           //ListView.builder(itemBuilder: (context, index) { return .....})
           Expanded(
             child: ListView(
-              children: [
-                tasklists('JAN', '23', '3', '0'),
-                tasklists('FEB', '24', '0', '3'),
-                tasklists('MAR', '25', '0', '1'),
-                tasklists('APR', '26', '0', '0'),
-                tasklists('MAY', '23', '3', '0'),
-                tasklists('JUN', '25', '0', '1'),
+              children: <Widget>[
+                GestureDetector(
+                  onTap: () {},
+                  child: tasklists('MAY', '24', '1', '3'),
+                ),
+                GestureDetector(
+                  onTap: () {},
+                  child: tasklists('JUN', '25', '2', '3'),
+                ),
+                GestureDetector(
+                  onTap: () {},
+                  child: tasklists('JULY', '24', '5', '3'),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const AttendanceDetail()));
+                  },
+                  child: tasklists('AUG', '23', '1', '3'),
+                ),
+                GestureDetector(
+                  onTap: () {},
+                  child: tasklists('SEP', '22', '1', '3'),
+                ),
               ],
             ),
           ),

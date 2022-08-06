@@ -54,7 +54,7 @@ class ScorePageState extends State<ScorePage> {
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(0),
-              color: const Color(0xffec2777),
+              //color: const Color(0xffec2777),
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -65,7 +65,7 @@ class ScorePageState extends State<ScorePage> {
                   style: const TextStyle(
                     fontFamily: 'CenturyGothic',
                     fontSize: 20,
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
                 ),
                 Text(
@@ -73,7 +73,7 @@ class ScorePageState extends State<ScorePage> {
                   style: const TextStyle(
                     fontFamily: 'CenturyGothic',
                     fontSize: 20,
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
                 ),
               ],
@@ -90,43 +90,46 @@ class ScorePageState extends State<ScorePage> {
   ) {
     return Container(
       padding: const EdgeInsets.only(top: 0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        //crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Container(
-            height: 45,
-            width: 380,
-            margin: const EdgeInsets.only(left: 4),
-            padding: const EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(0),
-              color: const Color(0xffedbd1d),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  subject,
-                  style: const TextStyle(
-                    fontFamily: 'CenturyGothic',
-                    fontSize: 20,
-                    color: Colors.white,
+      child: Card(
+        elevation: 2.5,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          //crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Container(
+              height: 45,
+              width: 380,
+              margin: const EdgeInsets.only(left: 4),
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(0),
+                //color: const Color(0xffedbd1d),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    subject,
+                    style: const TextStyle(
+                      fontFamily: 'CenturyGothic',
+                      fontSize: 20,
+                      color: Color(0xff0b82c3),
+                    ),
                   ),
-                ),
-                Text(
-                  score,
-                  style: const TextStyle(
-                    fontFamily: 'CenturyGothic',
-                    fontSize: 20,
-                    color: Colors.white,
+                  Text(
+                    score,
+                    style: const TextStyle(
+                      fontFamily: 'CenturyGothic',
+                      fontSize: 20,
+                      color: Color(0xff0b82c3),
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -137,37 +140,273 @@ class ScorePageState extends State<ScorePage> {
   ) {
     return Container(
       padding: const EdgeInsets.only(top: 0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        //crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Container(
-            height: 45,
-            width: 380,
-            margin: const EdgeInsets.only(left: 4),
-            padding: const EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(0),
-              color: const Color(0xffa7499a),
+      child: Card(
+        elevation: 2.5,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          //crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Container(
+              height: 45,
+              width: 380,
+              margin: const EdgeInsets.only(left: 4),
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(0),
+                //color: const Color(0xffa7499a),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    total,
+                    style: const TextStyle(
+                      fontFamily: 'CenturyGothic',
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
+                  Text(
+                    totalScore,
+                    style: const TextStyle(
+                      fontFamily: 'CenturyGothic',
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xffdb2127),
+                    ),
+                  ),
+                ],
+              ),
             ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Container avaragetask(
+    String avarage,
+    String avarageScore,
+  ) {
+    return Container(
+      padding: const EdgeInsets.only(top: 0),
+      child: Card(
+        elevation: 2.5,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          //crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Container(
+              height: 45,
+              width: 380,
+              margin: const EdgeInsets.only(left: 4),
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(0),
+                //color: const Color(0xffa7499a),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    avarage,
+                    style: const TextStyle(
+                      fontFamily: 'CenturyGothic',
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xff0b82c3),
+                    ),
+                  ),
+                  Text(
+                    avarageScore,
+                    style: const TextStyle(
+                      fontFamily: 'CenturyGothic',
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Container gradetask(
+    String grade,
+    String gradeScore,
+  ) {
+    return Container(
+      padding: const EdgeInsets.only(top: 0),
+      child: Card(
+        elevation: 2.5,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          //crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Container(
+              height: 45,
+              width: 380,
+              margin: const EdgeInsets.only(left: 4),
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(0),
+                //color: const Color(0xffa7499a),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    grade,
+                    style: const TextStyle(
+                      fontFamily: 'CenturyGothic',
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xff0b82c3),
+                    ),
+                  ),
+                  Text(
+                    gradeScore,
+                    style: const TextStyle(
+                      fontFamily: 'CenturyGothic',
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xffedbd1d),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Container details() {
+    return Container(
+      margin: const EdgeInsets.only(top: 10, left: 25),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          const Text(
+            "-NOTE",
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+            ),
+          ),
+          Container(
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
+              children: const <Widget>[
                 Text(
-                  total,
-                  style: const TextStyle(
-                    fontFamily: 'CenturyGothic',
+                  "A",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
                     fontSize: 20,
-                    color: Colors.white,
+                    color: Color(0xffdb2127),
                   ),
                 ),
                 Text(
-                  totalScore,
-                  style: const TextStyle(
-                    fontFamily: 'CenturyGothic',
+                  " ល្អណាស់",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
                     fontSize: 20,
-                    color: Colors.white,
+                    color: Color(0xff0b82c3),
+                  ),
+                ),
+                Text(
+                  "              B",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    color: Color(0xffedbd1d),
+                  ),
+                ),
+                Text(
+                  " ល្អប្រសើរ",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    color: Color(0xff0b82c3),
+                  ),
+                ),
+                Text(
+                  "              B",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    color: Color(0xff12663b),
+                  ),
+                ),
+                Text(
+                  " ល្អ",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    color: Color(0xff0b82c3),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            child: Row(
+              children: const <Widget>[
+                Text(
+                  "D",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    color: Color(0xffec2777),
+                  ),
+                ),
+                Text(
+                  " ល្អបង្គួរ",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    color: Color(0xff0b82c3),
+                  ),
+                ),
+                Text(
+                  "                  E",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    color: Color(0xffa7499a),
+                  ),
+                ),
+                Text(
+                  " មធ្យម",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    color: Color(0xff0b82c3),
+                  ),
+                ),
+                Text(
+                  "                    F",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    color: Color(0xffdb2127),
+                  ),
+                ),
+                Text(
+                  " ធ្លាក់",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    color: Color(0xff0b82c3),
                   ),
                 ),
               ],
@@ -191,7 +430,7 @@ class ScorePageState extends State<ScorePage> {
           children: [
             const SizedBox(
               width: double.infinity,
-              height: 200,
+              height: 230,
               child: Profile(),
             ),
             Row(
@@ -242,21 +481,27 @@ class ScorePageState extends State<ScorePage> {
               ],
             ),
             Expanded(
-                child: ListView(
-              children: [
-                maintasklists('Subject', "Score"),
-                //ListView.builder(itemBuilder: (context, index) { return .....})
-                subtasklists('Khmer', '100'),
-                subtasklists('English', '100'),
-                subtasklists('Math', '100'),
-                subtasklists('Biology', '100'),
-                subtasklists('History', '100'),
-                subtasklists('Khmer', '100'),
-                subtasklists('Khmer', '100'),
-                //
-                totaltask('Total', '100'),
-              ],
-            ))
+              child: ListView(
+                children: [
+                  maintasklists('Subject', "Score"),
+                  //ListView.builder(itemBuilder: (context, index) { return .....})
+                  subtasklists('Khmer', '125'),
+                  subtasklists('English', '42'),
+                  subtasklists('Math', '125'),
+                  subtasklists('Biology', '74'),
+                  subtasklists('History', '48'),
+
+                  //
+                  totaltask('Total', '540'),
+                  //
+                  avaragetask('Avarage', '86.25'),
+                  //
+                  gradetask('Grade', 'B'),
+                  //
+                  details(),
+                ],
+              ),
+            ),
           ],
         ),
       );

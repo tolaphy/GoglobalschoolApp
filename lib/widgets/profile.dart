@@ -10,9 +10,15 @@ class Profile extends StatelessWidget {
       body: Stack(children: <Widget>[
         const SizedBox(
           width: double.infinity,
-          height: 200,
+          height: 230,
           child: DecoratedBox(
-            decoration: BoxDecoration(),
+            decoration: BoxDecoration(
+              color: Colors.black,
+              image: DecorationImage(
+                image: AssetImage('images/bgprofile.jpg'),
+                fit: BoxFit.cover,
+              ),
+            ),
           ),
         ),
         SafeArea(
