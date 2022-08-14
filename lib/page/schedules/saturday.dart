@@ -43,7 +43,7 @@ class SaturdayPage extends StatelessWidget {
                     time,
                     style: const TextStyle(
                       fontFamily: 'CenturyGothic',
-                      color: Color(0xff0b82c3),
+                      color: Colors.black,
                       fontSize: 16,
                     ),
                   ),
@@ -61,7 +61,7 @@ class SaturdayPage extends StatelessWidget {
                         teachername,
                         style: const TextStyle(
                           fontFamily: 'CenturyGothic',
-                          color: Color(0xff0b82c3),
+                          color: Colors.black,
                           fontSize: 16,
                         ),
                       ),
@@ -69,7 +69,7 @@ class SaturdayPage extends StatelessWidget {
                         period,
                         style: const TextStyle(
                           fontFamily: 'CenturyGothic',
-                          color: Color(0xff0b82c3),
+                          color: Colors.black,
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                         ),

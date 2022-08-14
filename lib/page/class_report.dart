@@ -34,7 +34,7 @@ class Class_report extends StatelessWidget {
                     "Class 11(2020-2021)",
                     style: TextStyle(
                       fontFamily: 'CenturyGothic',
-                      color: Color(0xff0b82c3),
+                      color: Colors.black,
                       fontSize: 20,
                     ),
                   ),
@@ -52,7 +52,7 @@ class Class_report extends StatelessWidget {
                     "Class 12(2021-2022)",
                     style: TextStyle(
                       fontFamily: 'CenturyGothic',
-                      color: Color(0xff0b82c3),
+                      color: Colors.black,
                       fontSize: 20,
                     ),
                   ),

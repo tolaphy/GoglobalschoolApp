@@ -66,6 +66,7 @@ class ScorePageState extends State<ScorePage> {
                     fontFamily: 'CenturyGothic',
                     fontSize: 20,
                     color: Colors.black,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
@@ -74,6 +75,7 @@ class ScorePageState extends State<ScorePage> {
                     fontFamily: 'CenturyGothic',
                     fontSize: 20,
                     color: Colors.black,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ],
@@ -114,7 +116,7 @@ class ScorePageState extends State<ScorePage> {
                     style: const TextStyle(
                       fontFamily: 'CenturyGothic',
                       fontSize: 20,
-                      color: Color(0xff0b82c3),
+                      color: Colors.black,
                     ),
                   ),
                   Text(
@@ -122,7 +124,7 @@ class ScorePageState extends State<ScorePage> {
                     style: const TextStyle(
                       fontFamily: 'CenturyGothic',
                       fontSize: 20,
-                      color: Color(0xff0b82c3),
+                      color: Colors.black,
                     ),
                   ),
                 ],

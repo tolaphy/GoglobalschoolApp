@@ -147,7 +147,7 @@ class AttendanceDetail extends StatelessWidget {
                               child: const Text(
                                 'MONTH',
                                 style: TextStyle(
-                                  color: Color(0xff0b82c3),
+                                  color: Colors.black,
                                   fontSize: 20,
                                 ),
                               ),
@@ -156,7 +156,7 @@ class AttendanceDetail extends StatelessWidget {
                               child: const Text(
                                 'PRESENT',
                                 style: TextStyle(
-                                  color: Color(0xff0b82c3),
+                                  color: Colors.black,
                                   fontSize: 20,
                                 ),
                               ),
@@ -165,7 +165,7 @@ class AttendanceDetail extends StatelessWidget {
                               child: const Text(
                                 'ABSENT',
                                 style: TextStyle(
-                                  color: Color(0xff0b82c3),
+                                  color: Colors.black,
                                   fontSize: 20,
                                 ),
                               ),
@@ -174,7 +174,7 @@ class AttendanceDetail extends StatelessWidget {
                               child: const Text(
                                 'PERMISSION',
                                 style: TextStyle(
-                                  color: Color(0xff0b82c3),
+                                  color: Colors.black,
                                   fontSize: 20,
                                 ),
                               ),

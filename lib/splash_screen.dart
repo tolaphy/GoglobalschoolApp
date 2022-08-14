@@ -49,8 +49,7 @@ class InitState extends State<SplashScreen> {
           Center(
             child: Container(
               child: Image.asset(
-                "images/logo2.png",
-                height: 250,
+                "images/splash_screen.png",
               ),
             ),
           )

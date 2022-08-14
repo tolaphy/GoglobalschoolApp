@@ -25,7 +25,10 @@ Container attendancelists(
           margin: const EdgeInsets.only(top: 10),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(25),
-            border: Border.all(color: const Color(0xffec2777)),
+            border: Border.all(
+              color: const Color(0xffec2777),
+              width: 1,
+            ),
             color: Colors.white,
           ),
           child: Column(
@@ -37,7 +40,7 @@ Container attendancelists(
                 style: const TextStyle(
                   fontFamily: 'CenturyGothic',
                   fontSize: 20,
-                  color: Color(0xff0b82c3),
+                  color: Colors.black,
                 ),
               ),
               Text(
@@ -45,7 +48,7 @@ Container attendancelists(
                 style: const TextStyle(
                   fontFamily: 'CenturyGothic',
                   fontSize: 20,
-                  color: Color(0xff0b82c3),
+                  color: Colors.black,
                 ),
               ),
             ],
@@ -85,6 +88,7 @@ Container maintasklists(
                   fontFamily: 'CenturyGothic',
                   fontSize: 20,
                   color: Colors.black,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
               Text(
@@ -93,6 +97,7 @@ Container maintasklists(
                   fontFamily: 'CenturyGothic',
                   fontSize: 20,
                   color: Colors.black,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ],
@@ -133,7 +138,7 @@ Container subtasklists(
                   style: const TextStyle(
                     fontFamily: 'CenturyGothic',
                     fontSize: 20,
-                    color: Color(0xff0b82c3),
+                    color: Colors.black,
                   ),
                 ),
                 Text(
@@ -141,7 +146,7 @@ Container subtasklists(
                   style: const TextStyle(
                     fontFamily: 'CenturyGothic',
                     fontSize: 20,
-                    color: Color(0xff0b82c3),
+                    color: Colors.black,
                   ),
                 ),
               ],
@@ -462,12 +467,12 @@ class ReportPageState extends State<ReportPage> {
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 20,
-                      color: Color(0xff0b82c3),
+                      color: Colors.black,
                     ),
                   ),
                 ),
                 const Divider(
-                  color: Color(0xff0b82c3),
+                  color: Colors.black,
                   height: 40,
                   thickness: 2,
                   indent: 8,
@@ -479,7 +484,7 @@ class ReportPageState extends State<ReportPage> {
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
-                      color: Color(0xff0b82c3),
+                      color: Colors.black,
                     ),
                   ),
                 ),
@@ -493,7 +498,7 @@ class ReportPageState extends State<ReportPage> {
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 18,
-                        color: Color(0xff0b82c3),
+                        color: Colors.black,
                       ),
                     ),
                   ),
@@ -501,7 +506,7 @@ class ReportPageState extends State<ReportPage> {
                 attendancelists(
                     '175/180 Days', 'Total attendance of the student'),
                 const Divider(
-                  color: Color(0xff0b82c3),
+                  color: Colors.black,
                   height: 40,
                   thickness: 2,
                   indent: 8,
@@ -514,13 +519,13 @@ class ReportPageState extends State<ReportPage> {
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 20,
-                      color: Color(0xff0b82c3),
+                      color: Colors.black,
                     ),
                     textAlign: TextAlign.center,
                   ),
                 ),
                 const Divider(
-                  color: Color(0xff0b82c3),
+                  color: Colors.black,
                   height: 50,
                   thickness: 2,
                   indent: 8,
@@ -532,7 +537,7 @@ class ReportPageState extends State<ReportPage> {
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
-                      color: Color(0xff0b82c3),
+                      color: Colors.black,
                     ),
                   ),
                 ),
@@ -561,7 +566,7 @@ class ReportPageState extends State<ReportPage> {
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 18,
-                        color: Color(0xff0b82c3),
+                        color: Colors.black,
                       ),
                     ),
                   ),

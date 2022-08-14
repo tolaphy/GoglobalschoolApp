@@ -45,7 +45,7 @@ class EventDetail extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 14,
                               fontFamily: 'CenturyGothic',
-                              color: Color(0xff0b82c3),
+                              color: Colors.black,
                             ),
                           ),
                         ],
@@ -58,7 +58,7 @@ class EventDetail extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 18,
                           fontFamily: 'CenturyGothic',
-                          color: Color(0xff0b82c3),
+                          color: Colors.black,
                         ),
                       ),
                     )
@@ -81,7 +81,7 @@ class EventDetail extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 16,
                     fontFamily: 'CenturyGothic',
-                    color: Color(0xff0b82c3),
+                    color: Colors.black,
                   ),
                   textAlign: TextAlign.justify,
                 ),

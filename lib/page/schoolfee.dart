@@ -62,7 +62,7 @@ Container tasklists(
                       value1,
                       style: const TextStyle(
                         fontFamily: 'CenturyGothic',
-                        color: Color(0xff0b82c3),
+                        color: Colors.black,
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                       ),
@@ -71,7 +71,7 @@ Container tasklists(
                       paid,
                       style: const TextStyle(
                         fontFamily: 'CenturyGothic',
-                        color: Color(0xff0b82c3),
+                        color: Colors.black,
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                       ),
@@ -92,7 +92,7 @@ Container tasklists(
                       totalfee,
                       style: const TextStyle(
                         fontFamily: 'CenturyGothic',
-                        color: Color(0xff0b82c3),
+                        color: Colors.black,
                         fontSize: 16,
                       ),
                     ),
@@ -100,7 +100,7 @@ Container tasklists(
                       value2,
                       style: const TextStyle(
                         fontFamily: 'CenturyGothic',
-                        color: Color(0xff0b82c3),
+                        color: Colors.black,
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                       ),
@@ -114,7 +114,7 @@ Container tasklists(
                       extrafee,
                       style: const TextStyle(
                         fontFamily: 'CenturyGothic',
-                        color: Color(0xff0b82c3),
+                        color: Colors.black,
                         fontSize: 16,
                       ),
                     ),
@@ -122,7 +122,7 @@ Container tasklists(
                       value3,
                       style: const TextStyle(
                         fontFamily: 'CenturyGothic',
-                        color: Color(0xff0b82c3),
+                        color: Colors.black,
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                       ),
@@ -136,7 +136,7 @@ Container tasklists(
                       latecharges,
                       style: const TextStyle(
                         fontFamily: 'CenturyGothic',
-                        color: Color(0xff0b82c3),
+                        color: Colors.black,
                         fontSize: 16,
                       ),
                     ),
@@ -144,7 +144,7 @@ Container tasklists(
                       value4,
                       style: const TextStyle(
                         fontFamily: 'CenturyGothic',
-                        color: Color(0xff0b82c3),
+                        color: Colors.black,
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                       ),
@@ -158,7 +158,7 @@ Container tasklists(
                       discount,
                       style: const TextStyle(
                         fontFamily: 'CenturyGothic',
-                        color: Color(0xff0b82c3),
+                        color: Colors.black,
                         fontSize: 16,
                       ),
                     ),
@@ -166,7 +166,7 @@ Container tasklists(
                       value5,
                       style: const TextStyle(
                         fontFamily: 'CenturyGothic',
-                        color: Color(0xff0b82c3),
+                        color: Colors.black,
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                       ),
@@ -180,7 +180,7 @@ Container tasklists(
                       paidfee,
                       style: const TextStyle(
                         fontFamily: 'CenturyGothic',
-                        color: Color(0xff0b82c3),
+                        color: Colors.black,
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                       ),
@@ -189,7 +189,7 @@ Container tasklists(
                       value6,
                       style: const TextStyle(
                         fontFamily: 'CenturyGothic',
-                        color: Color(0xff0b82c3),
+                        color: Colors.black,
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                       ),

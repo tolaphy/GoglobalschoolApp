@@ -54,7 +54,7 @@ Container tasklists(
                           style: const TextStyle(
                             fontFamily: 'CenturyGothic',
                             fontSize: 16,
-                            color: Color(0xff0b82c3),
+                            color: Colors.black,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -67,7 +67,7 @@ Container tasklists(
                         date,
                         style: const TextStyle(
                           fontFamily: 'CenturyGothic',
-                          color: Color(0xff0b82c3),
+                          color: Colors.black,
                           fontSize: 14,
                         ),
                       ),

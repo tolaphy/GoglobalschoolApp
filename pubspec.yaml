@@ -45,12 +45,15 @@ dependencies:
   custom_navigator: ^0.3.0
   http: ^0.13.4
   flutter_secure_storage: ^5.0.2
+  responsive_framework: ^0.2.0 
   api_cache_manager: ^1.0.2
   snippet_coder_utils: ^1.0.12
+  
   
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+
 
 dev_dependencies:
   flutter_test:
@@ -112,6 +115,7 @@ flutter:
    - images/gh.jpeg
    - images/fd.jpeg
    - images/logo2.png
+   - images/splash_screen.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
