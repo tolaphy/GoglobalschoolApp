@@ -12,7 +12,7 @@ import 'package:goglobalschoolapp/widgets/appbar.dart';
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
-  Container _MenuCard(String imgpath, Color boxcolor) {
+  Container _MenuCard(String imgpath, Color boxcolor, String name) {
     return Container(
       child: Card(
         elevation: 5,
@@ -26,6 +26,13 @@ class HomePage extends StatelessWidget {
               height: 70,
               color: boxcolor,
             ),
+            Text(
+              name,
+              style: const TextStyle(
+                  fontSize: 15,
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold),
+            )
           ],
         ),
       ),
@@ -128,9 +135,9 @@ class HomePage extends StatelessWidget {
                 child: Expanded(
                   child: GridView.count(
                     crossAxisCount: 3,
+
                     //crossAxisSpacing: 5.0,
                     mainAxisSpacing: 50,
-
                     children: <Widget>[
                       GestureDetector(
                         onTap: () => {
@@ -140,59 +147,59 @@ class HomePage extends StatelessWidget {
                                   builder: (context) =>
                                       const AttendancePage())),
                         },
-                        child: _MenuCard(
-                          'attendance.png',
-                          const Color(0xff12663b),
-                        ),
+                        child: _MenuCard('attendance.png',
+                            const Color(0xff12663b), "Attendance"),
                       ),
                       GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => ScorePage()));
-                          },
-                          child:
-                              _MenuCard('score.png', const Color(0xffec2777))),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ScorePage()));
+                        },
+                        child: _MenuCard(
+                            'score.png', const Color(0xffec2777), "Score"),
+                      ),
                       GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const SchedulePage()));
-                          },
-                          child: _MenuCard(
-                              'schedule.png', const Color(0xffedbd1d))),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const SchedulePage()));
+                        },
+                        child: _MenuCard('schedule.png',
+                            const Color(0xffedbd1d), "Schedule"),
+                      ),
                       GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const SchoolFeePage()));
-                          },
-                          child: _MenuCard(
-                              'schoolfee.png', const Color(0xffa7499a))),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const SchoolFeePage()));
+                        },
+                        child: _MenuCard('schoolfee.png',
+                            const Color(0xffa7499a), "SchoolFees"),
+                      ),
                       GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const EventPage()));
-                          },
-                          child:
-                              _MenuCard('event.png', const Color(0xff653413))),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const EventPage()));
+                        },
+                        child: _MenuCard(
+                            'event.png', const Color(0xff653413), "Event"),
+                      ),
                       GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const Class_report()));
-                          },
-                          child:
-                              _MenuCard('report.png', const Color(0xffdb2127))),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const Class_report()));
+                        },
+                        child: _MenuCard(
+                            'report.png', const Color(0xffdb2127), "Report"),
+                      ),
                     ],
                   ),
                 ),

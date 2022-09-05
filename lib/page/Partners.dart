@@ -92,7 +92,7 @@ class Partners extends StatelessWidget {
                   Container(
                     margin: const EdgeInsets.only(left: 10),
                     child: Image.asset(
-                      'images/IBC.jpeg',
+                      'images/IBC.png',
                       height: 100,
                     ),
                   ),

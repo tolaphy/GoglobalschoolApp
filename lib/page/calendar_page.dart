@@ -27,6 +27,7 @@ class CalendarPage extends StatelessWidget {
                 height: 70,
                 width: 65,
                 padding: const EdgeInsets.all(10),
+                // margin: const EdgeInsets.only(right: 10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   color: const Color(0xffec2777),
@@ -54,7 +55,7 @@ class CalendarPage extends StatelessWidget {
                 )),
             Container(
                 height: 70,
-                width: 300,
+                width: 350,
                 padding: const EdgeInsets.all(10),
                 margin: const EdgeInsets.only(left: 20),
                 decoration: BoxDecoration(
@@ -139,7 +140,7 @@ class CalendarPage extends StatelessWidget {
                   height: 10,
                 ),
                 Container(
-                  padding: const EdgeInsets.only(left: 20),
+                  //padding: const EdgeInsets.only(left: 20),
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height,
                   decoration: const BoxDecoration(color: Colors.white),

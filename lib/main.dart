@@ -12,7 +12,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final HttpLink httpLink = HttpLink('http://localhost:2000/');
+    final HttpLink httpLink =
+        HttpLink('https://sms-endpoint.go-globalschool.com/graphql');
 
     Map<String, String> requestHeaders = {
       'Content-type': 'application/json',

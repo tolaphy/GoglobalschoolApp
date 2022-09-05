@@ -74,18 +74,6 @@ class MapScreenState extends State<ProfilePage> {
                       ),
                     ],
                   ),
-                  Container(
-                    margin: const EdgeInsets.only(
-                      left: 120,
-                    ),
-                    child: IconButton(
-                      icon: const Icon(
-                        Icons.camera_alt_sharp,
-                        color: Colors.white,
-                      ),
-                      onPressed: () {},
-                    ),
-                  )
                 ],
               ),
             ),

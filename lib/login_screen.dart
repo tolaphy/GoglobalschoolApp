@@ -9,18 +9,9 @@ import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 String mutation = """
- mutation LoginUser(\$email: String!, \$password: String!) {
-  loginUser(email: \$email, password: \$password) {
+ mutation Login(\$email: String!, \$password: String!) {
+  login(email: \$email, password: \$password) {
     token
-    user {
-      id
-      email
-      firstName
-      lastName
-      image
-      tel
-    }
-    
   }
 }
 
@@ -65,7 +56,10 @@ class InitState extends State<LoginScreen> {
               children: [
                 Container(
                   margin: const EdgeInsets.only(top: 100),
-                  child: Image.asset("images/logo_app.png"),
+                  child: Image.asset(
+                    "images/logo_app.png",
+                    height: 200,
+                  ),
                 )
               ],
             )),
@@ -151,10 +145,12 @@ class InitState extends State<LoginScreen> {
                                   TextStyle(fontFamily: 'CenturyGothic'))),
                     ),
                     GestureDetector(
-                      onTap: (() => Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const HomeScreen()))),
+                      onTap: (() => runMutation(
+                            {
+                              'email': emailController.text,
+                              'password': passController.text,
+                            },
+                          )),
                       child: Container(
                         margin:
                             const EdgeInsets.only(left: 20, right: 20, top: 20),

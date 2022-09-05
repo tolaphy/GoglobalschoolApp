@@ -3,6 +3,20 @@ import 'package:goglobalschoolapp/page/event_detial.dart';
 
 import 'package:goglobalschoolapp/widgets/appbar.dart';
 import 'package:goglobalschoolapp/widgets/profile.dart';
+import 'package:graphql_flutter/graphql_flutter.dart';
+
+String Get_Event = """
+query GetEvents {
+  getEvents {
+    _id
+    eventName
+    eventNameKhmer
+    eventDate
+  }
+}
+
+"""
+    .replaceAll('\n', '');
 
 class EventPage extends StatefulWidget {
   const EventPage({Key? key}) : super(key: key);
@@ -90,6 +104,11 @@ class EventPageState extends State<EventPage> {
         arrowback: true,
         title: "Events",
       ),
+      // body: Query(options: QueryOptions(document: gql(Get_Event),),
+      //   builder: (QueryResult.(result, {fetchMore, refetch}) {
+      //     if(result.has)
+      //   }),
+      // )
       body: Column(
         children: [
           const SizedBox(
@@ -106,54 +125,24 @@ class EventPageState extends State<EventPage> {
               crossAxisCount: 2,
               //mainAxisSpacing: 5,
               children: <Widget>[
-                GestureDetector(
-                  onTap: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const EventDetail())),
-                  child: tasklists(
-                    const Color(0xffec2777),
-                    '1.jpeg',
-                    'School is going for vacation in next month',
-                    '02 may 2022',
+                Container(
+                  child: Query(
+                    options: QueryOptions(
+                      document: gql(Get_Event),
+                    ),
+                    builder: (QueryResult result, {fetchMore, refetch}) {
+                      // it can be either Map or List
+                      if (result.hasException) {
+                        return Text(result.exception.toString());
+                      }
+                      final users = result.data?["users"];
+
+                      print(users[1].toString());
+
+                      return Text("OK" + users[1].toString());
+                    },
                   ),
-                ),
-                GestureDetector(
-                  onTap: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const EventDetail())),
-                  child: tasklists(
-                    const Color(0xffa7499a),
-                    '2.jpeg',
-                    'School is going for vacation in next month',
-                    '02 may 2022',
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const EventDetail())),
-                  child: tasklists(
-                    const Color(0xffedbd1d),
-                    '3.jpeg',
-                    'School is going for vacation in next month',
-                    '02 may 2022',
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const EventDetail())),
-                  child: tasklists(
-                    const Color(0xff12663b),
-                    '1.jpeg',
-                    'School is going for vacation in next month',
-                    '02 may 2022',
-                  ),
-                ),
+                )
               ],
             ),
           )

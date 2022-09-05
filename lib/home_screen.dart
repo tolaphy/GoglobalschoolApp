@@ -37,13 +37,25 @@ class HomeScreenState extends State<HomeScreen> {
           //selectedItemColor: Colors.white,
           //unselectedItemColor: Colors.white,
           items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
             BottomNavigationBarItem(
-                icon: Icon(Icons.calendar_month), label: 'Calendar'),
+                icon: Icon(Icons.home),
+                activeIcon: Icon(Icons.home_outlined),
+                label: 'Home'),
             BottomNavigationBarItem(
-                icon: Icon(Icons.newspaper_sharp), label: 'News'),
+              icon: Icon(Icons.calendar_month),
+              activeIcon: Icon(Icons.calendar_month_outlined),
+              label: 'Calendar',
+            ),
             BottomNavigationBarItem(
-                icon: Icon(Icons.settings), label: 'Setting'),
+              icon: Icon(Icons.newspaper),
+              activeIcon: Icon(Icons.newspaper_outlined),
+              label: 'News',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.settings),
+              activeIcon: Icon(Icons.settings_outlined),
+              label: 'Setting',
+            ),
           ]),
     );
   }
