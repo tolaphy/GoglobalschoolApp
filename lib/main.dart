@@ -1,9 +1,18 @@
+import 'dart:async';
+import 'dart:convert';
+import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:goglobalschoolapp/GraphQLConfig.dart';
+import 'package:http/http.dart' as http;
 import 'package:goglobalschoolapp/splash_screen.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:responsive_framework/responsive_framework.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:convert' show json, base64, ascii;
 
-void main() {
+Future<void> main() async {
+  await initHiveForFlutter();
   runApp(const MyApp());
 }
 
@@ -12,23 +21,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final HttpLink httpLink =
-        HttpLink('https://sms-endpoint.go-globalschool.com/graphql');
-
-    Map<String, String> requestHeaders = {
-      'Content-type': 'application/json',
-      'Accept': 'application/json',
-      'Authorization': '<Your token>'
-    };
-
-    ValueNotifier<GraphQLClient> client = ValueNotifier(
-      GraphQLClient(
-        link: httpLink as Link,
-        cache: GraphQLCache(
-          store: InMemoryStore(),
-        ),
-      ),
-    );
+    //GraphQLConfig init
+    ValueNotifier<GraphQLClient> client = GraphQLConfig.graphInit();
     return GraphQLProvider(
       client: client,
       child: MaterialApp(

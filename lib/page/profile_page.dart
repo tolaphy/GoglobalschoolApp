@@ -50,14 +50,14 @@ class MapScreenState extends State<ProfilePage> {
                 children: <Widget>[
                   const CircleAvatar(
                     backgroundImage: AssetImage('images/Profile.png'),
-                    radius: 50,
+                    radius: 40,
                   ),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: const <Widget>[
                       Text(
-                        "PHY TOLA",
+                        "DY NYSA",
                         style: TextStyle(
                           fontFamily: 'CenturyGothic',
                           fontSize: 20,
@@ -65,7 +65,7 @@ class MapScreenState extends State<ProfilePage> {
                         ),
                       ),
                       Text(
-                        "Class 12A",
+                        "Class 4C",
                         style: TextStyle(
                           fontFamily: 'CenturyGothic',
                           fontSize: 20,
@@ -111,7 +111,7 @@ class MapScreenState extends State<ProfilePage> {
                       enabled: false,
                       readOnly: true,
                       decoration: InputDecoration(
-                          hintText: "TL12659021",
+                          hintText: "000001",
                           hintStyle: TextStyle(
                             fontFamily: 'CenturyGothic',
                             fontWeight: FontWeight.bold,
@@ -155,7 +155,7 @@ class MapScreenState extends State<ProfilePage> {
                       // enabled: false,
                       readOnly: true,
                       decoration: InputDecoration(
-                          hintText: "21 Oct 1999",
+                          hintText: "08 Dec 2012",
                           hintStyle: TextStyle(
                             fontFamily: 'CenturyGothic',
                             fontWeight: FontWeight.bold,
@@ -200,51 +200,7 @@ class MapScreenState extends State<ProfilePage> {
                       readOnly: true,
 
                       decoration: InputDecoration(
-                          hintText: "012659021",
-                          hintStyle: TextStyle(
-                            fontFamily: 'CenturyGothic',
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black,
-                            fontSize: 20,
-                          )),
-                    ),
-                  ),
-                ],
-              )),
-          Padding(
-              padding:
-                  const EdgeInsets.only(left: 25.0, right: 25.0, top: 10.0),
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                children: <Widget>[
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.min,
-                    children: const <Widget>[
-                      Text(
-                        'Mother Name',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: 'CenturyGothic',
-                          color: Color(0xff0b82c3),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              )),
-          Padding(
-              padding: const EdgeInsets.only(left: 25.0, right: 25.0, top: 2.0),
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                children: const <Widget>[
-                  Flexible(
-                    child: TextField(
-                      //enabled: false,
-                      readOnly: true,
-                      decoration: InputDecoration(
-                          hintText: "Monica Larson",
+                          hintText: "012770168",
                           hintStyle: TextStyle(
                             fontFamily: 'CenturyGothic',
                             fontWeight: FontWeight.bold,
@@ -288,7 +244,51 @@ class MapScreenState extends State<ProfilePage> {
                       //enabled: false,
                       readOnly: true,
                       decoration: InputDecoration(
-                          hintText: "Bernard Taylor",
+                          hintText: "Lok Lundy",
+                          hintStyle: TextStyle(
+                            fontFamily: 'CenturyGothic',
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                            fontSize: 20,
+                          )),
+                    ),
+                  ),
+                ],
+              )),
+          Padding(
+              padding:
+                  const EdgeInsets.only(left: 25.0, right: 25.0, top: 10.0),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                children: <Widget>[
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: const <Widget>[
+                      Text(
+                        'Mother Name',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'CenturyGothic',
+                          color: Color(0xff0b82c3),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              )),
+          Padding(
+              padding: const EdgeInsets.only(left: 25.0, right: 25.0, top: 2.0),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                children: const <Widget>[
+                  Flexible(
+                    child: TextField(
+                      //enabled: false,
+                      readOnly: true,
+                      decoration: InputDecoration(
+                          hintText: "Chong Dany",
                           hintStyle: TextStyle(
                             fontFamily: 'CenturyGothic',
                             fontWeight: FontWeight.bold,

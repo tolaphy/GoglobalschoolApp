@@ -9,8 +9,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../login_screen.dart';
 
-class EventDetail extends StatelessWidget {
-  const EventDetail({Key? key}) : super(key: key);
+class EventDetail1 extends StatelessWidget {
+  const EventDetail1({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -54,7 +54,7 @@ class EventDetail extends StatelessWidget {
                     Container(
                       margin: const EdgeInsets.only(top: 20),
                       child: const Text(
-                        'PUBLIC HOLIDAY ANNOUNCEMENT',
+                        'Welcome to the new academic year',
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
@@ -71,35 +71,20 @@ class EventDetail extends StatelessWidget {
                 child: ClipRRect(
                     borderRadius: BorderRadius.circular(15),
                     child: Image.asset(
-                      'images/1.jpeg',
+                      'images/2.jpeg',
                       height: 250,
                     )),
               ),
               Container(
                 margin: const EdgeInsets.only(top: 30, left: 10),
                 child: const Text(
-                  'Dear parents or legal guardians, This is the announcement on Public Holiday.',
+                  'Welcome to the new academic year, lovely students! Lets start your study journey with us and build another wonderful memory together.',
                   style: TextStyle(
                     fontSize: 20,
                     fontFamily: 'CenturyGothic',
                     color: Colors.black,
                   ),
                   textAlign: TextAlign.left,
-                ),
-              ),
-              Container(
-                margin: const EdgeInsets.only(right: 350),
-                child: Column(
-                  children: const <Widget>[
-                    Text(
-                      'Thank you!',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontFamily: 'CenturyGothic',
-                        color: Colors.black,
-                      ),
-                    ),
-                  ],
                 ),
               ),
             ],

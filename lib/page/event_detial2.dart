@@ -7,10 +7,10 @@ import 'package:goglobalschoolapp/widgets/forgetAppbar.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../login_screen.dart';
+import '../../login_screen.dart';
 
-class EventDetail extends StatelessWidget {
-  const EventDetail({Key? key}) : super(key: key);
+class EventDetail2 extends StatelessWidget {
+  const EventDetail2({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -37,24 +37,9 @@ class EventDetail extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      margin: const EdgeInsets.only(top: 10, right: 300),
-                      child: Column(
-                        children: const <Widget>[
-                          Text(
-                            '',
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontFamily: 'CenturyGothic',
-                              color: Colors.black,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
                       margin: const EdgeInsets.only(top: 20),
                       child: const Text(
-                        'PUBLIC HOLIDAY ANNOUNCEMENT',
+                        'ថ្នាក់កុំព្យូទ័រចុងសប្ដាហ៍',
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
@@ -71,14 +56,14 @@ class EventDetail extends StatelessWidget {
                 child: ClipRRect(
                     borderRadius: BorderRadius.circular(15),
                     child: Image.asset(
-                      'images/1.jpeg',
+                      'images/3.jpeg',
                       height: 250,
                     )),
               ),
               Container(
                 margin: const EdgeInsets.only(top: 30, left: 10),
                 child: const Text(
-                  'Dear parents or legal guardians, This is the announcement on Public Holiday.',
+                  'ការសិក្សាមូលដ្ឋានគ្រឹះកុំព្យូទ័រ ដើម្បីជំនួយដល់ការងារ និងសិក្សាស្រាវជ្រាវ។ ដោយអនុវត្ដលើ Typing និង Microsoft Word, Excel, Powerpoint ព្រមទាណងការរៀបចំឯកសាររដ្ឋបាលក្នុងការិយាល័យ។',
                   style: TextStyle(
                     fontSize: 20,
                     fontFamily: 'CenturyGothic',
@@ -88,11 +73,26 @@ class EventDetail extends StatelessWidget {
                 ),
               ),
               Container(
-                margin: const EdgeInsets.only(right: 350),
+                margin: const EdgeInsets.only(top: 10, right: 380),
                 child: Column(
                   children: const <Widget>[
                     Text(
-                      'Thank you!',
+                      'Sunday',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontFamily: 'CenturyGothic',
+                        color: Colors.black,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.only(top: 10, right: 280),
+                child: Column(
+                  children: const <Widget>[
+                    Text(
+                      '7:30am - 11:30am',
                       style: TextStyle(
                         fontSize: 20,
                         fontFamily: 'CenturyGothic',

@@ -1,17 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:goglobalschoolapp/page/event_detial.dart';
+import 'package:goglobalschoolapp/page/event_detial1.dart';
+import 'package:goglobalschoolapp/page/event_detial2.dart';
+import 'package:goglobalschoolapp/page/event_detial3.dart';
 
 import 'package:goglobalschoolapp/widgets/appbar.dart';
 import 'package:goglobalschoolapp/widgets/profile.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
 String Get_Event = """
-query GetEvents {
-  getEvents {
+query GetEvents(\$academicYearId: ID) {
+  getEvents(academicYearId: \$academicYearId) {
     _id
     eventName
     eventNameKhmer
     eventDate
+    academicYearId {
+      _id
+      academicYear
+      status
+      note
+    }
   }
 }
 
@@ -55,7 +64,7 @@ Container tasklists(
                     borderRadius: BorderRadius.circular(15),
                     child: Image.asset(
                       'images/${imgpath}',
-                      height: 70,
+                      height: 100,
                     ),
                   ),
                 ),
@@ -67,7 +76,7 @@ Container tasklists(
                           title,
                           style: const TextStyle(
                             fontFamily: 'CenturyGothic',
-                            fontSize: 16,
+                            fontSize: 14,
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
                           ),
@@ -125,24 +134,54 @@ class EventPageState extends State<EventPage> {
               crossAxisCount: 2,
               //mainAxisSpacing: 5,
               children: <Widget>[
-                Container(
-                  child: Query(
-                    options: QueryOptions(
-                      document: gql(Get_Event),
-                    ),
-                    builder: (QueryResult result, {fetchMore, refetch}) {
-                      // it can be either Map or List
-                      if (result.hasException) {
-                        return Text(result.exception.toString());
-                      }
-                      final users = result.data?["users"];
-
-                      print(users[1].toString());
-
-                      return Text("OK" + users[1].toString());
-                    },
+                GestureDetector(
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const EventDetail())),
+                  child: tasklists(
+                    const Color(0xffec2777),
+                    '1.jpeg',
+                    'PUBLIC HOLIDAY ANNOUNCEMENT',
+                    '',
                   ),
-                )
+                ),
+                GestureDetector(
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const EventDetail1())),
+                  child: tasklists(
+                    const Color(0xffa7499a),
+                    '2.jpeg',
+                    'Welcome to the new academic year',
+                    '',
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const EventDetail2())),
+                  child: tasklists(
+                    const Color(0xffedbd1d),
+                    '3.jpeg',
+                    'ថ្នាក់កុំព្យូទ័រចុងសប្ដាហ៍',
+                    '',
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const EventDetail3())),
+                  child: tasklists(
+                    const Color(0xff12663b),
+                    '4.jpeg',
+                    'ការប្រគល់សម្ភារៈសិក្សា ឆ្នាំសិក្សា ២០២២-២០២៣',
+                    '',
+                  ),
+                ),
               ],
             ),
           )

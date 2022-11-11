@@ -35,6 +35,8 @@ DropdownMenuItem<String> buildMenuItem1(String month) => DropdownMenuItem(
         month,
       ),
     );
+String selectedValue = "2022";
+String selectedValue1 = "October";
 
 class ScorePageState extends State<ScorePage> {
   Container maintasklists(
@@ -449,11 +451,14 @@ class ScorePageState extends State<ScorePage> {
                     children: [
                       DropdownButtonHideUnderline(
                         child: DropdownButton<String>(
-                          value: value,
                           isExpanded: true,
                           items: years.map(buildMenuItem).toList(),
-                          onChanged: (value) =>
-                              setState(() => this.value = value),
+                          value: selectedValue,
+                          onChanged: (String? newValue) {
+                            setState(() {
+                              selectedValue = newValue!;
+                            });
+                          },
                         ),
                       ),
                     ],
@@ -470,11 +475,14 @@ class ScorePageState extends State<ScorePage> {
                     children: [
                       DropdownButtonHideUnderline(
                         child: DropdownButton<String>(
-                          value: value1,
+                          value: selectedValue1,
                           isExpanded: true,
                           items: months.map(buildMenuItem1).toList(),
-                          onChanged: (value1) =>
-                              setState(() => this.value1 = value1),
+                          onChanged: (String? newValue) {
+                            setState(() {
+                              selectedValue1 = newValue!;
+                            });
+                          },
                         ),
                       ),
                     ],
@@ -487,16 +495,17 @@ class ScorePageState extends State<ScorePage> {
                 children: [
                   maintasklists('Subject', "Score"),
                   //ListView.builder(itemBuilder: (context, index) { return .....})
-                  subtasklists('Khmer', '125'),
-                  subtasklists('English', '42'),
-                  subtasklists('Math', '125'),
-                  subtasklists('Biology', '74'),
-                  subtasklists('History', '48'),
+
+                  subtasklists('English', '7'),
+                  subtasklists('Chinese', '5'),
+                  subtasklists('Mathematics', '10'),
+                  subtasklists('Science', '8'),
+                  subtasklists('Geography', '7'),
 
                   //
-                  totaltask('Total', '540'),
+                  totaltask('Total', '37'),
                   //
-                  avaragetask('Avarage', '86.25'),
+                  avaragetask('Avarage', '7,4'),
                   //
                   gradetask('Grade', 'B'),
                   //

@@ -7,10 +7,10 @@ import 'package:goglobalschoolapp/widgets/forgetAppbar.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../login_screen.dart';
+import '../../login_screen.dart';
 
-class EventDetail extends StatelessWidget {
-  const EventDetail({Key? key}) : super(key: key);
+class EventDetail3 extends StatelessWidget {
+  const EventDetail3({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -37,24 +37,9 @@ class EventDetail extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      margin: const EdgeInsets.only(top: 10, right: 300),
-                      child: Column(
-                        children: const <Widget>[
-                          Text(
-                            '',
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontFamily: 'CenturyGothic',
-                              color: Colors.black,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
                       margin: const EdgeInsets.only(top: 20),
                       child: const Text(
-                        'PUBLIC HOLIDAY ANNOUNCEMENT',
+                        'ការប្រគល់សម្ភារៈសិក្សា ឆ្នាំសិក្សា ២០២២-២០២៣',
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
@@ -71,14 +56,14 @@ class EventDetail extends StatelessWidget {
                 child: ClipRRect(
                     borderRadius: BorderRadius.circular(15),
                     child: Image.asset(
-                      'images/1.jpeg',
-                      height: 250,
+                      'images/4.jpeg',
+                      height: 600,
                     )),
               ),
               Container(
                 margin: const EdgeInsets.only(top: 30, left: 10),
                 child: const Text(
-                  'Dear parents or legal guardians, This is the announcement on Public Holiday.',
+                  'មាតាបិតា ឬអ្នកអាណាព្យាបាល ជាទីគោរព សាលាហ្គោគ្លូប៊ល មានកិត្តិយសសូមជូនដំណឹងស្ដីពីប្រគល់សម្ភារៈសិក្សា សម្រាប់ឆ្នាំសិក្សា ២០២២-២០២៣។ សូមអរគុណ!',
                   style: TextStyle(
                     fontSize: 20,
                     fontFamily: 'CenturyGothic',
@@ -88,11 +73,11 @@ class EventDetail extends StatelessWidget {
                 ),
               ),
               Container(
-                margin: const EdgeInsets.only(right: 350),
+                margin: const EdgeInsets.only(left: 10),
                 child: Column(
                   children: const <Widget>[
                     Text(
-                      'Thank you!',
+                      'Dear parents or legal guardians Go Global School would like to inform parents or legal guardians that the school will be available to supply with the 2022-2023 uniforms and study materials. Thank you!',
                       style: TextStyle(
                         fontSize: 20,
                         fontFamily: 'CenturyGothic',

@@ -1,12 +1,18 @@
-import 'package:flutter/material.dart';
+import 'dart:convert';
+import 'dart:io';
 
+import 'package:flutter/material.dart';
+import 'package:goglobalschoolapp/GraphQLConfig.dart';
+import 'package:http/http.dart' as http;
 import 'package:goglobalschoolapp/home_screen.dart';
 import 'package:goglobalschoolapp/main.dart';
 import 'package:goglobalschoolapp/page/forget_pass.dart';
-
 import 'package:graphql_flutter/graphql_flutter.dart';
-
 import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:convert' show json, base64, ascii;
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+
+late String? finalEmail;
 
 String mutation = """
  mutation Login(\$email: String!, \$password: String!) {
@@ -29,6 +35,36 @@ class LoginScreen extends StatefulWidget {
 class InitState extends State<LoginScreen> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passController = TextEditingController();
+  GlobalKey<FormState> globalFormKey = GlobalKey<FormState>();
+
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+  final storage = const FlutterSecureStorage();
+
+  final formKey = GlobalKey<FormState>();
+
+  Future getvalidationData() async {
+    final SharedPreferences sharedPreferences =
+        await SharedPreferences.getInstance();
+    var obtainedEmail = sharedPreferences.getString('email');
+    setState(() {
+      finalEmail = obtainedEmail;
+    });
+    print(finalEmail);
+  }
+
+  @override
+  void initState() {
+    getvalidationData().whenComplete(() async {
+      finalEmail;
+    });
+    super.initState();
+  }
+
+  void displayDialog(context, title, text) => showDialog(
+        context: context,
+        builder: (context) =>
+            AlertDialog(title: Text(title), content: Text(text)),
+      );
 
   @override
   Widget build(BuildContext context) {
@@ -41,6 +77,7 @@ class InitState extends State<LoginScreen> {
           child: Column(
         children: [
           Container(
+            key: formKey,
             height: 300,
             decoration: const BoxDecoration(
                 color: Color(0x00000001),
@@ -68,12 +105,12 @@ class InitState extends State<LoginScreen> {
             options: MutationOptions(
               document: gql(mutation),
               onCompleted: (dynamic resultData) async {
-                Navigator.pushReplacement(
+                Navigator.push(
                     context,
                     MaterialPageRoute(
                         builder: (context) => const HomeScreen()));
 
-                print(resultData);
+                print('on completed $resultData');
               },
             ),
             builder: (
@@ -145,12 +182,38 @@ class InitState extends State<LoginScreen> {
                                   TextStyle(fontFamily: 'CenturyGothic'))),
                     ),
                     GestureDetector(
-                      onTap: (() => runMutation(
-                            {
-                              'email': emailController.text,
-                              'password': passController.text,
-                            },
-                          )),
+                      onTap: () async {
+                        if (emailController.text == 'loklundy@gmail.com' &&
+                            passController.text == '123456789') {
+                          //formKey.currentState!.reset();
+                          final SharedPreferences sharedPreferences =
+                              await SharedPreferences.getInstance();
+                          sharedPreferences.setString(
+                              'email', emailController.text);
+
+                          runMutation({
+                            'email': emailController.text,
+                            'password': passController.text,
+                          });
+                          print(result?.data);
+                        } else if (emailController.text.isEmpty &&
+                            passController.text.isEmpty) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                  content: Text('Blank Field Not Allow')));
+                        } else if (emailController.text.isEmpty) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                  content: Text('Email is still empty!')));
+                        } else if (passController.text.isEmpty) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                  content: Text('Password is still empty!')));
+                        } else {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(content: Text('Error occured!')));
+                        }
+                      },
                       child: Container(
                         margin:
                             const EdgeInsets.only(left: 20, right: 20, top: 20),
@@ -205,5 +268,16 @@ class InitState extends State<LoginScreen> {
         ],
       )),
     );
+  }
+
+  bool validateAndSave() {
+    final form = globalFormKey.currentState;
+    if (form!.validate()) {
+      print(emailController.text);
+      print(passController.text);
+      form.save();
+      return true;
+    }
+    return false;
   }
 }

@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:goglobalschoolapp/page/News_Details.dart';
+import 'package:goglobalschoolapp/page/News_Details2.dart';
+import 'package:goglobalschoolapp/page/News_Details3.dart';
 import 'package:goglobalschoolapp/widgets/appbar.dart';
 
 import 'package:url_launcher/url_launcher.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+
+import 'News_Details1.dart';
 
 class NewsPage extends StatelessWidget {
   final Uri _url = Uri.parse('https://www.go-globalschool.com/news');
@@ -119,12 +123,13 @@ class NewsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        appBar: const CommonAppBar(
-          notificationenabled: true,
-          arrowback: false,
-          title: "News",
-        ),
-        body: Container(
+      appBar: const CommonAppBar(
+        notificationenabled: true,
+        arrowback: false,
+        title: "News",
+      ),
+      body: ListView(children: [
+        Container(
           child: Column(
             children: [
               GestureDetector(
@@ -145,6 +150,12 @@ class NewsPage extends StatelessWidget {
                 ),
               ),
               GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const NewsDetail1()));
+                },
                 child: Column(
                   children: [
                     tasklists(
@@ -155,8 +166,46 @@ class NewsPage extends StatelessWidget {
                   ],
                 ),
               ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const NewsDetail2()));
+                },
+                child: Column(
+                  children: [
+                    tasklists(
+                      'q2.png',
+                    ),
+                    dc(
+                        'Public on : 2022-04-25',
+                        '2020 and 2021 Annual Shareholders Meeting',
+                        'Read More..')
+                  ],
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const NewsDetail3()));
+                },
+                child: Column(
+                  children: [
+                    tasklists(
+                      'q5.png',
+                    ),
+                    dc(
+                        'Public on : 2021-09-27',
+                        'Discount 40% for the New Academic Ye...',
+                        'Read More..')
+                  ],
+                ),
+              ),
             ],
           ),
         ),
-      );
+      ]));
 }

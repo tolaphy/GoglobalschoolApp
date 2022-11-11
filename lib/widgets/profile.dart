@@ -46,14 +46,14 @@ class Profile extends StatelessWidget {
                     children: <Widget>[
                       const CircleAvatar(
                         backgroundImage: AssetImage('images/Profile.png'),
-                        radius: 50,
+                        radius: 40,
                       ),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: const <Widget>[
                           Text(
-                            "PHY TOLA",
+                            "DY NISA",
                             style: TextStyle(
                               fontFamily: 'CenturyGothic',
                               color: Colors.white,
@@ -61,7 +61,7 @@ class Profile extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            "Class 12A",
+                            "Class 4C",
                             style: TextStyle(
                               fontFamily: 'CenturyGothic',
                               color: Colors.white,

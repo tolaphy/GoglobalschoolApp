@@ -5,10 +5,10 @@ import 'package:goglobalschoolapp/page/Attendance_Detail.dart';
 import 'package:goglobalschoolapp/widgets/appbar.dart';
 import 'package:goglobalschoolapp/widgets/profile.dart';
 
-import 'attendance_page2.dart';
+import 'attendance_page.dart';
 
-class AttendancePage extends StatefulWidget {
-  const AttendancePage({Key? key}) : super(key: key);
+class AttendancePage2 extends StatefulWidget {
+  const AttendancePage2({Key? key}) : super(key: key);
 
   @override
   AttendancePageState createState() => AttendancePageState();
@@ -38,7 +38,7 @@ List<DropdownMenuItem<String>> get dropdownItems {
   return menuItems;
 }
 
-class AttendancePageState extends State<AttendancePage> {
+class AttendancePageState extends State<AttendancePage2> {
   Container tasklists(
     String month,
     String value1,
@@ -151,16 +151,16 @@ class AttendancePageState extends State<AttendancePage> {
                   iconColor: Colors.white,
                 ),
                 dropdownColor: Colors.white,
-                value: selectedValue,
+                value: selectedValue1,
                 onChanged: (String? newValue) {
                   setState(() {
-                    if (selectedValue == newValue) {
-                      selectedValue = newValue!;
+                    if (selectedValue1 == newValue) {
+                      selectedValue1 = newValue!;
                     } else {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const AttendancePage2()));
+                              builder: (context) => const AttendancePage()));
                     }
                   });
                 },
@@ -217,11 +217,11 @@ class AttendancePageState extends State<AttendancePage> {
               children: <Widget>[
                 GestureDetector(
                   onTap: () {},
-                  child: tasklists('JAN', '21', '0', '0'),
+                  child: tasklists('JAN', '23', '3', '0'),
                 ),
                 GestureDetector(
                   onTap: () {},
-                  child: tasklists('FEB', '19', '0', '3'),
+                  child: tasklists('FEB', '17', '0', '3'),
                 ),
                 GestureDetector(
                   onTap: () {},
@@ -229,7 +229,7 @@ class AttendancePageState extends State<AttendancePage> {
                 ),
                 GestureDetector(
                   onTap: () {},
-                  child: tasklists('APR', '0', '0', '0'),
+                  child: tasklists('APR', '21', '0', '0'),
                 ),
                 GestureDetector(
                   onTap: () {},
@@ -262,7 +262,7 @@ class AttendancePageState extends State<AttendancePage> {
                 ),
                 GestureDetector(
                   onTap: () {},
-                  child: tasklists('NOV', '0', '0', '0'),
+                  child: tasklists('NOV', '24', '1', '1'),
                 ),
                 GestureDetector(
                   onTap: () {},

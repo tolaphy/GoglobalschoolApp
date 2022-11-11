@@ -488,8 +488,7 @@ class ReportPageState extends State<ReportPage> {
                     ),
                   ),
                 ),
-                attendancelists(
-                    '175/180 Days', 'Total attendance of the student'),
+                attendancelists('8 Days', 'Total absent of the student'),
                 Container(
                   margin: const EdgeInsets.only(top: 10),
                   child: const Center(
@@ -503,8 +502,7 @@ class ReportPageState extends State<ReportPage> {
                     ),
                   ),
                 ),
-                attendancelists(
-                    '175/180 Days', 'Total attendance of the student'),
+                attendancelists('12 Days', 'Total absent of the student'),
                 const Divider(
                   color: Colors.black,
                   height: 40,
@@ -542,21 +540,20 @@ class ReportPageState extends State<ReportPage> {
                   ),
                 ),
                 //
-                maintasklists('Subject', "Score"),
+                maintasklists('Month', "Score"),
                 //ListView.builder(itemBuilder: (context, index) { return .....})
                 //ListView.builder(itemBuilder: (context, index) { return .....})
-                subtasklists('Khmer', '125'),
-                subtasklists('English', '42'),
-                subtasklists('Math', '125'),
-                subtasklists('Biology', '74'),
-                subtasklists('History', '48'),
+                subtasklists('Nov', '9,1'),
+                subtasklists('Dec', '7,3'),
+                subtasklists('Jan', '9,12'),
+                subtasklists('Feb', '8,9'),
+                subtasklists('Mar', '8,0'),
 
                 //
-                totaltask('Total', '540'),
                 //
-                avaragetask('Avarage', '86.25'),
+                avaragetask('Avarage', '8,484'),
                 //
-                gradetask('Grade', 'B'),
+                gradetask('Grade', 'A'),
 
                 Container(
                   margin: const EdgeInsets.only(top: 20),
@@ -572,21 +569,20 @@ class ReportPageState extends State<ReportPage> {
                   ),
                 ),
                 //
-                maintasklists('Subject', "Score"),
-                // //ListView.builder(itemBuilder: (context, index) { return .....})
+                maintasklists('Month', "Score"),
                 //ListView.builder(itemBuilder: (context, index) { return .....})
-                subtasklists('Khmer', '125'),
-                subtasklists('English', '42'),
-                subtasklists('Math', '125'),
-                subtasklists('Biology', '74'),
-                subtasklists('History', '48'),
+                //ListView.builder(itemBuilder: (context, index) { return .....})
+                subtasklists('Jun', '9,1'),
+                subtasklists('July', '8.11'),
+                subtasklists('Aug', '8,7'),
+                subtasklists('Sep', '8,17'),
+                subtasklists('Sep', '9,7'),
 
                 //
-                totaltask('Total', '540'),
                 //
-                avaragetask('Avarage', '86.25'),
+                avaragetask('Avarage', '8,756'),
                 //
-                gradetask('Grade', 'B'),
+                gradetask('Grade', 'A'),
                 //
                 details(),
               ],
